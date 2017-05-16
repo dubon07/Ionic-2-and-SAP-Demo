@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Employees
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header>
+      Company ABC 
+    </ion-list-header>
+    <button ion-item *ngFor="let employee of employees" (click)="buttonClick(employee)">
+      <h2>{{employee.Name}}</h2>
+      <p>{{employee.EmpID}}</p>
+    </button>
+  </ion-list>
+
+</ion-content>

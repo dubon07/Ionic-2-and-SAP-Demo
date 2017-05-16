@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>Employee Details</ion-list-header>
+  </ion-list>
+  <form [formGroup]="detailsForm" (ngSubmit)="update()">
+    <ion-item>
+        <ion-label>ID</ion-label>
+        <ion-input type="text" formControlName="id" [(ngModel)]="details.EmpID"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" formControlName="name" [(ngModel)]="details.Name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Salary</ion-label>
+        <ion-input type="text" formControlName="salary" [(ngModel)]="details.Salary"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Address</ion-label>
+        <ion-input type="text" formControlName="address" [(ngModel)]="details.Address"></ion-input>
+    </ion-item>
+    <button ion-button color="secondary" type="submit" [disabled]="!detailsForm.valid">Update</button>
+  </form>
+  <button ion-button (click)="create()">Create</button>
+  <button ion-button color="danger" (click)="delete()">Delete</button>
+</ion-content>
